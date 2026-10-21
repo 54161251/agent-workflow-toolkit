@@ -32,3 +32,27 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m unittest discover -s tests -v
       - run: python demo.py
+  agent-evaluation-lab:
+    name: Agent Evaluation Lab (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    defaults:
+      run:
+        working-directory: agent-evaluation-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m unittest discover -s tests -v
+      - run: python agent_eval.py compare examples/demo-suite.json --json ci-report.json --html ci-report.html
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent-evaluation-report-python-${{ matrix.python-version }}
+          path: |
+            agent-evaluation-lab/ci-report.json
+            agent-evaluation-lab/ci-report.html
+          if-no-files-found: warn

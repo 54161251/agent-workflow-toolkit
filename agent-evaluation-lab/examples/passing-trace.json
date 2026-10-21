@@ -1,0 +1,22 @@
+{
+  "scenario_id": "clean-search",
+  "events": [
+    {
+      "type": "tool_call",
+      "tool": "search_issues",
+      "arguments": {
+        "repository": "demo/widgets",
+        "query": "login crash"
+      },
+      "status": "ok",
+      "latency_ms": 120,
+      "tokens": 40
+    },
+    {
+      "type": "final",
+      "text": "Issue #42 describes the login crash. See the linked reproduction.",
+      "tokens": 30,
+      "latency_ms": 80
+    }
+  ]
+}
