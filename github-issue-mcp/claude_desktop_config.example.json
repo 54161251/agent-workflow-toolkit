@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "github-issue-assistant": {
+      "command": "uv",
+      "args": ["--directory", "/absolute/path/to/github-issue-mcp", "run", "server.py"]
+    }
+  }
+}

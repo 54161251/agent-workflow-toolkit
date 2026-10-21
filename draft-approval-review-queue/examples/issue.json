@@ -1,0 +1,6 @@
+{
+  "kind": "issue_draft",
+  "destination": "https://github.com/example/demo",
+  "title": "Handle empty responses",
+  "body": "Synthetic example: add an empty-response regression test before changing the parser."
+}
