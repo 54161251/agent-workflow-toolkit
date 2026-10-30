@@ -1,5 +1,20 @@
 # Agent Workflow Toolkit
 
+[![Project tests](https://github.com/54161251/agent-workflow-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/54161251/agent-workflow-toolkit/actions/workflows/tests.yml)
+
+**Portfolio by [Kaiwen Ji](https://github.com/54161251).** Explore three engineering problems: connecting an assistant to GitHub, ensuring approvals match the current draft, and detecting regressions in recorded agent behavior.
+
+## Two-minute tour
+
+1. **See the output:** the evaluation report below shows a synthetic comparison.
+2. **Try an offline demo:** enter `draft-approval-review-queue` and run `python demo.py`; no API key is needed.
+3. **Inspect the implementation:** start with `review_queue.py`, `agent-evaluation-lab/agent_eval.py`, or `github-issue-mcp/src/github_issue_mcp/`.
+4. **Check evidence:** each project has tests and a `VALIDATION.md`; repository CI runs all three projects.
+
+![Synthetic agent evaluation report](agent-evaluation-lab/reports/demo-preview.png)
+
+*The image uses handcrafted traces to demonstrate the evaluator. It is not a measured model-performance improvement.*
+
 Three separate Python projects exploring issue drafting, draft review, and
 evaluation of recorded agent behavior.
 Maintained by Kaiwen Ji. Each folder is independently runnable; there is no
